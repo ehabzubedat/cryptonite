@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.css" rel="stylesheet" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>{{ title }}</title>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Cryptonite</a>
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars navbar-hamburger"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Tabs navs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" data-mdb-toggle="tab" href="#home-tab" role="tab">home</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" data-mdb-toggle="tab" href="#live-reports-tab" role="tab">live reports</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" data-mdb-toggle="tab" href="#about-tab" role="tab">about</a>
+                    </li>
+                </ul>
+                <!-- ./Tabs navs -->
+            </div>
+        </div>
+    </nav>
+    <!-- ./navbar -->
+
+    {{{ body }}}
+
+    <!-- footer -->
+    <footer id="footer" class="text-center text-white d-none" style="background-color: rgba(0, 0, 0, 0.3);">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+                <!-- Google -->
+                <a class="btn btn-primary btn-floating text-white m-1" style="background-color: #dd4b39;"
+                    href="mailto: ehabzbedat@gmail.com" role="button"><i class="fab fa-google"></i></a>
+
+                <!-- Linkedin -->
+                <a class="btn btn-primary btn-floating text-white m-1" style="background-color: #0082ca;"
+                    href="https://linkedin.com/in/ehabzubedat" role="button"><i class="fab fa-linkedin-in"></i></a>
+                <!-- Github -->
+                <a class="btn btn-primary btn-floating text-white m-1" style="background-color: #333333;"
+                    href="https://github.com/ehabzubedat" role="button"><i class="fab fa-github"></i></a>
+            </section>
+            <!-- ./Section: Social media -->
+        </div>
+        <!-- ./Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.5);">
+            <i class="fa-solid fa-code me-1"></i>
+            Developed By Ehab Zubedat.
+        </div>
+        <!-- ./Copyright -->
+    </footer>
+    <!-- ./footer -->
+</body>
+
+<!-- MDB -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.js"></script>
+<!-- SweetAlert2 -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- Pagination.js -->
+<script src="https://pagination.js.org/dist/2.1.5/pagination.min.js"></script>
+<!-- Main Js -->
+<script src="assets/js/script.js"></script>
+
+</html>
