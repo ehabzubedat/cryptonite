@@ -32,7 +32,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <!-- Tabs navs -->
-                <ul class="nav nav-tabs" role="tablist">
+                <ul class="nav nav-tabs me-auto" role="tablist">
                     <li class="nav-item" role="presentation">
                         <a class="nav-link active" data-mdb-toggle="tab" href="#home-tab" role="tab">home</a>
                     </li>
@@ -43,6 +43,9 @@
                         <a class="nav-link" data-mdb-toggle="tab" href="#about-tab" role="tab">about</a>
                     </li>
                 </ul>
+                <form class="d-flex input-group w-auto" autocomplete="off">
+                    <input id="search" type="search" class="form-control" placeholder="Search Cryptocurrency.." aria-label="Search" />
+                </form>
                 <!-- ./Tabs navs -->
             </div>
         </div>
@@ -63,10 +66,12 @@
 
                 <!-- Linkedin -->
                 <a class="btn btn-primary btn-floating text-white m-1" style="background-color: #0082ca;"
-                    href="https://linkedin.com/in/ehabzubedat" role="button"><i class="fab fa-linkedin-in"></i></a>
+                    href="https://linkedin.com/in/ehabzubedat" target="_blank" role="button"><i
+                        class="fab fa-linkedin-in"></i></a>
                 <!-- Github -->
                 <a class="btn btn-primary btn-floating text-white m-1" style="background-color: #333333;"
-                    href="https://github.com/ehabzubedat" role="button"><i class="fab fa-github"></i></a>
+                    href="https://github.com/ehabzubedat" target="_blank" role="button"><i
+                        class="fab fa-github"></i></a>
             </section>
             <!-- ./Section: Social media -->
         </div>
@@ -86,8 +91,6 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.js"></script>
 <!-- SweetAlert2 -->
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<!-- Pagination.js -->
-<script src="https://pagination.js.org/dist/2.1.5/pagination.min.js"></script>
 <!-- Main Js -->
 <script src="assets/js/script.js"></script>
 

@@ -3,10 +3,11 @@ $(function () {
 
     // API Call Function
     const apiCall = () => {
-        $('#crypto-cards').hide();
+        $('#crypto-cards').empty().hide();
         $.ajax({
             url: `https://api.coingecko.com/api/v3/coins/`,
             beforeSend: function () {
+                $('#footer').addClass('d-none');
                 $('#loader').show();
             },
             success: function (res) {
@@ -20,6 +21,9 @@ $(function () {
             }
         });
     }
+
+    // API call on load
+    apiCall();
 
     // Function that appends crypto data into cards
     const appendCard = (coin) => {
@@ -44,7 +48,7 @@ $(function () {
                                     More info
                                 </button>
                                 <label class="switch">
-                                    <input type="checkbox">
+                                    <input class="checkbox" type="checkbox">
                                     <span class="slider round"></span>
                                 </label>
                             </div>
@@ -65,16 +69,58 @@ $(function () {
         );
     }
 
+    // API Call by id function
+    const apiCallById = (id) => {
+        $.ajax({
+            url: `https://api.coingecko.com/api/v3/coins/${id}`,
+            success: function (res) {
+                appendCard(res);
+            }
+        });
+    }
+
+    // API search Call function
+    const apiSearchCall = (query) => {
+        $('#crypto-cards').empty().hide();
+        $.ajax({
+            url: `https://api.coingecko.com/api/v3/search?query=${query}`,
+            beforeSend: function () {
+                $('#footer').addClass('d-none');
+                $('#loader').show();
+            },
+            success: function (res) {
+                res.coins.forEach(coin => {
+                    apiCallById(coin.id);
+                });
+                $('#loader').fadeOut(1000, () => {
+                    $('#crypto-cards').fadeIn(1000);
+                    $('#footer').removeClass('d-none');
+                });
+            }
+        });
+    }
+
+    // Form submit return false in order to prevent page reload
+    $('form').on('submit', () => {
+        return false;
+    });
+
+    // Search Function
+    $('#search').on('input', (e) => {
+        if($('#search').val() == '') {
+            apiCall();
+        } else {
+            apiSearchCall($('#search').val().toLowerCase());
+        }
+    });
+
     // function that hides menu on link click
     $('.navbar-collapse a').on('click', () => {
         $(".navbar-collapse").collapse('hide');
     });
 
-    // API call on load
-    apiCall();
-
     // Function that animates navbar on scroll
-    $(window).scroll(() => {
+    $(window).on('scroll', () => {
         if ($(document).scrollTop() > 30) {
             $('nav').addClass('animate');
         } else {
@@ -82,10 +128,19 @@ $(function () {
         }
     });
 
-    // Function to refresh data every 2 minutes
-    // setInterval(function () {
-    //     apiCall();
-    // }, 120000);
-
-    // $("[type='checkbox']:checked").length
+    // Function that checks if toggle buttons are not more that 5
+    $('#crypto-cards').on('click', '.checkbox', function () {
+        if (this.checked) {
+            if ($(".checkbox:checked").length > 5) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops..',
+                    text: 'You can not select more that 5 cryptocurrencies',
+                });
+                $(this).prop('checked', false);
+            }
+        } else {
+            return;
+        }
+    });
 });
