@@ -89,10 +89,16 @@ $(function () {
                 $('#loader').show();
             },
             success: function (res) {
+                if(res.coins.length == 0) {
+                    $('#loader').fadeOut(500, () => {
+                        $('#not-found-message').removeClass('d-none');
+                    });
+                    return;
+                }
                 res.coins.forEach(coin => {
                     apiCallById(coin.id);
                 });
-                $('#loader').fadeOut(1000, () => {
+                $('#loader').fadeOut(2000, () => {
                     $('#crypto-cards').fadeIn(1000);
                     $('#footer').removeClass('d-none');
                 });
@@ -106,7 +112,8 @@ $(function () {
     });
 
     // Search Function
-    $('#search').on('input', (e) => {
+    $('#search').on('input', () => {
+        $('#not-found-message').addClass('d-none');
         if($('#search').val() == '') {
             apiCall();
         } else {
