@@ -328,11 +328,13 @@ h2 {
 /* ./about tab */
 
 /* live reports tab */
-#live-reports-tab .card {
+#live-reports-tab .card,
+#not-found-message .card {
     min-height: 1080px
 }
 
-#live-reports-tab h1 {
+#live-reports-tab h1,
+#not-found-message h1 {
     margin: auto;
 }
 
